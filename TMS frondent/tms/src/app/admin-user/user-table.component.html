@@ -1,0 +1,24 @@
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone no</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.fname }}</td>
+        <td>{{ user.lname }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phoneno}}</td>
+        <td><input type="button" value="Assign Project" class="btn btn-info" (click)="sendUid(user.id)"></td>
+        <!-- <td><input type="button" value="Assign Task"></td> -->
+      </tr>
+    </tbody>
+  </table>
+  

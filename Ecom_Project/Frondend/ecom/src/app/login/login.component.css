@@ -1,0 +1,12 @@
+.dual-sentence-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .left-sentence,
+  .right-sentence {
+    flex: 1;
+    padding: 3px;
+  }
+  

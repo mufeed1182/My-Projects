@@ -1,0 +1,30 @@
+.box {
+    height: 60px;
+    background-color: #cbcbcb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px; /* Add some padding for spacing */
+  }
+  
+  .left-buttons {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Add margin to separate left buttons from right button */
+  }
+  
+  .left-button,
+  .right-button {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    /* color: white; */
+    border: none;
+    font-weight: 200;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  .right-button {
+    background-color: #fdfdfd; /* Change the background color for the right button */
+  }
+  

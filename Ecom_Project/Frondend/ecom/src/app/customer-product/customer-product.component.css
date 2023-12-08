@@ -1,0 +1,25 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+  }
+  
+  .table th, .table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+  }
+  
+  .table input {
+    width: 100%;
+    /* border-radius: 0%; */
+    box-sizing: border-box;
+  }
+
+  .styled-button {
+    border: none;
+    background-color: gainsboro;
+  }
+  
+  .styled-button:hover {
+    background-color: #90c6ff;
+  }

@@ -1,0 +1,20 @@
+
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-3">
+        <br>
+        <h4 style="text-align: center;">Login Page</h4>
+        <br>
+    
+<form [formGroup]="loginForm">
+    Login Id: <input type="text" formControlName="id" class="form-control">
+    Password: <input type="password" formControlName="password" class="form-control">
+    <br>
+    <input type="button" value="Login" class="btn btn-info" (click)="fnLogin()">
+    <br>
+    <p>Don't have an account?<a routerLink="/signup">Sign up</a></p>
+    <p>Forgot password <a routerLink="/forgot">Click here</a></p>
+</form>
+</div>
+<div class="col-sm-5"></div>
+</div>

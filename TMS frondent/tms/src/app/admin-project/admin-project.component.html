@@ -1,0 +1,48 @@
+<div *ngIf="ShowProjectPage">
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <form [formGroup]="projectForm">
+          {{receivedUid}}
+            <br>
+            Project Name: <input type="text" formControlName="name" class="form-control">
+            Description: <input type="text" formControlName="description" class="form-control">
+            Starting Date: <input type="date" formControlName="startingDate" class="form-control">
+            Ending Date: <input type="date" formControlName="endingDate" class="form-control">
+            <br>
+            <input type="button" value="Add Project" class="btn btn-info" (click)="fnAddProject()">
+        </form>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+<br>
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Project Name</th>
+        <th>Description</th>
+        <th>Starting Date</th>
+        <th>Ending Date</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of projects">
+        <td>{{ p.id }}</td>
+        <td>{{ p.name}}</td>
+        <td>{{p.description}}</td>
+        <td>{{p.startingDate}}</td>
+        <td>{{p.endingDate}}</td>
+        <td><input type="button" value="Add Task" class="btn btn-info" (click)="navigateToTask(p.id,p.name)"></td>
+        <td><input type="button" value="Delete" class="btn btn-info" (click)="fnDeleteProject(p.id)"></td>
+        <td><input type="button" value="Assign Task" class="btn btn-info" *ngIf="fromUser" (click)="fnAddProjectToTheUser(p.id)"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- <router-outlet></router-outlet> -->
+
+
+

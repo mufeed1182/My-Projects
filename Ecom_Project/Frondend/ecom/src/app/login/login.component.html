@@ -1,0 +1,20 @@
+<p *ngIf="user">Welcome {{user.name}}. You are a {{user.role}}</p>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+    
+<h4 style="text-align: center;">Login Page</h4>
+<form [formGroup]="loginForm">
+    User Id: <input type="number" formControlName="id" class="form-control">
+    Passwrod: <input type="password" formControlName="password" class="form-control">
+    <br>
+    <input type="button" value="Login" class="btn btn-primary" (click)="fnLogin()">
+</form>
+<br>
+<div class="dual-sentence-container">
+<p class="left-sentence" style="font-size: 14px;"><a routerLink="/signup">Create New Account</a></p>
+<p class="left-sentence" style="font-size: 14px;"><a routerLink="/signup">Forgot Password</a></p>
+</div>
+</div>
+<div class="col-md-4"></div>
+</div>

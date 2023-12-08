@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <h4 style="text-align: center;">Signup Page</h4>
+    <form [formGroup]="signupForm">
+        Id: <input type="number" formControlName="id" class="form-control">
+        Name: <input type="text" formControlName="name" class="form-control">
+        Email: <input type="text" formControlName="email" class="form-control">
+        Phone No: <input type="text" formControlName="phoneNo" class="form-control">
+        Address: <input type="text" formControlName="address" class="form-control">
+        Password: <input type="text" formControlName="password" class="form-control">
+        Role: <input type="text" formControlName="role" class="form-control">
+        <br>
+        <input type="button" value="SignUp" class="btn btn-success" (click)="fnSignUp()">
+    </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>

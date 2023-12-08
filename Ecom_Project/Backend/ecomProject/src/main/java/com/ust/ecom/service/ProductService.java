@@ -1,0 +1,61 @@
+package com.ust.ecom.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ust.ecom.entity.Product;
+import com.ust.ecom.entity.User;
+import com.ust.ecom.repository.ProductRepository;
+
+@Service
+public class ProductService {
+	@Autowired
+	private ProductRepository pr;
+	
+	public Product create(Product product) {
+		return pr.save(product);
+	}
+	
+	public List<Product> read() {
+		return pr.findAll();
+	}
+	
+	public Product readById(Long id) {
+		Optional<Product> temp = pr.findById(id);
+		Product product=null;
+		if(temp.isPresent())
+		{
+			product=temp.get();
+		}
+		return product;
+	}
+	
+	public Product update(Product product) {
+		Product temp = readById(product.getId());
+		if(temp!=null)
+		{
+			temp=product;
+			pr.save(temp);
+		}
+		return temp;
+	}
+	
+	public Product delete(Long id) {
+		Product temp = readById(id);
+		if(temp!=null)
+		{
+			pr.delete(temp);
+		}
+		return temp;
+	}
+	
+	public List<Product> findProductByUser(User user)
+	{
+		return pr.findByUser(user);
+	}
+	
+
+}

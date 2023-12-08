@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4">
+      <form [formGroup]="taskForm">
+        <h5 style="text-align: center;">{{pname}}</h5>
+        <br>
+        Tasks: <input type="text" formControlName="taskName" class="form-control">
+        <br>
+        <input type="button" value="Add Task" class="btn btn-info" (click)="addTasksToProject()">
+      </form>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+<br>
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Task Name</th>
+        <th>Status</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of tasks">
+        <td>{{ p.id }}</td>
+        <td>{{ p.taskName }}</td>
+        <td>{{ p.status }}</td>
+        <td><input type="button" value="Update" class="btn btn-info"></td>
+        <td><input type="button" value="Delete" class="btn btn-info" (click)="deleteTask(p.id)"></td>
+        <td><input type="button" value="Assign" class="btn btn-info"></td>
+      </tr>
+    </tbody>
+  </table>
